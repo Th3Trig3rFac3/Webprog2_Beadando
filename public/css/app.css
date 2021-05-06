@@ -1,0 +1,16 @@
+.subreddit-icon{
+    max-height: 50px;
+    max-width: 50px;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    background: #474747;
+    color: aliceblue;
+    margin-top: auto;
+}
