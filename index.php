@@ -20,7 +20,6 @@ require_once './private/lib/database.php';
 $PAGE = $_GET['p'] ?? 'home';
 ?>
 
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,10 +28,11 @@ $PAGE = $_GET['p'] ?? 'home';
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, shrink-to-fit=no" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <title>Home</title>
+    <title>Element</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light"><?php require_once './private/components/nav.php' ?> </nav>
     <main><?php require_once 'private/lib/router.php'?></main>
+    <footer><?php require_once 'private/components/footer.php'?></footer>
 </body>
 </html>

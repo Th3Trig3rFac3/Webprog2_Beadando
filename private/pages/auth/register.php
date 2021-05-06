@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
             ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT, ['cost' => 20]),
         ]);
     } else{
-        //hibák kiírása szépen
+        //hibák kiírása szépen, a form utáni részt meg kéne itt hívni
     }
 }
 ?>
@@ -37,3 +37,9 @@ if(isset($_POST['submit'])){
     </div>
     <button type="submit" class="btn btn-primary col-auto">Submit</button>
 </form>
+
+<?php if(!(empty($errors))): ?>
+<div class="alert alert-warning" role="alert">
+  <?php echo $errors ?>
+</div>
+<?php endif; ?>

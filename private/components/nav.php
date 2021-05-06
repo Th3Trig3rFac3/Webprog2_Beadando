@@ -20,7 +20,7 @@
         <li class="nav-item">
             <a class="nav-link" href="?p=about">About</a>
         </li>
-        <?php if ($_SESSION['beadando']['admin'] === 1): ?>
+        <?php if ($_SESSION['users']['admin'] === 9): ?>
         <li class="nav-item">
             <a class="nav-link" href="?p=admin">Admin panel</a>
         </li>
