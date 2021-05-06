@@ -11,8 +11,8 @@ if(isset($_POST['submit'])){
             ':email' => $_POST['email'],
             ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT, ['cost' => 20]),
         ]);
-    } else {
-        //hibaüzenet
+    } else{
+        //hibák kiírása szépen
     }
 }
 ?>

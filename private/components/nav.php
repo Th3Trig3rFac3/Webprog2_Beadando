@@ -1,5 +1,6 @@
 <a class="navbar-brand" href="#">Element</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
 
@@ -8,21 +9,27 @@
         <li class="nav-item active">
             <a class="nav-link" href="?p=home">Home <span class="sr-only">(current)</span></a>
         </li>
+        <?php if(isset($_SESSION)): ?>
         <li class="nav-item">
             <a class="nav-link" href="?p=auth/login">Jelentkezz be</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="?p=auth/register">Regisztrálj</a>
         </li>
+        <?php endif; ?>
         <li class="nav-item">
             <a class="nav-link" href="?p=about">About</a>
         </li>
-        <!--
-        <?php //if(web2.beadando.admin = 0) ?>
+        <?php if ($_SESSION['beadando']['admin'] === 1): ?>
         <li class="nav-item">
             <a class="nav-link" href="?p=admin">Admin panel</a>
         </li>
-        csak akkor legyen látható a gomb, ha admin van bejelentkezve -->
+        <?php endif; ?>
+        <?php if(isset($_SESSION)):?>
+            <li class="nav-item navbar-brand">
+                <a class="nav-link" href="?p=logout">Kijelentkezés</a>
+            </li>
+        <?php endif;?>
         <!--
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

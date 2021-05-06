@@ -6,7 +6,7 @@ if(isset($_POST['submit'])){
         $_SESSION['user'] = $user;
     }
     else {
-        $errors['_'][] = 'Username or password is wrong';
+        $errors['_'][] = 'Helytelen felhasználónév vagy jelszó';
     }
 }
 ?>

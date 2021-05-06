@@ -21,4 +21,32 @@ if(isset($_POST['submit'])){
             'uploaded_by' => $_SESSION['user']['id'],
         ]);
     }
-}
+}?>
+
+<div>
+    <form method="post" enctype="multipart/form-data">
+        <div>
+            <h4>Upload your file: </h4>
+        </div>
+        <div>
+            <label for="fileToUpload">Select your file:</label>
+            <input type="file" name="fileToUpload" id="fileToUpload" />
+        </div>
+        <?php if($uploadErrors): ?>
+            <div>
+                <h5>Upload failed!</h5>
+                <?php foreach ($uploadErrors as $field => $messages): ?>
+                    <h6><?= $field ?>: </h6>
+                    <ul>
+                        <?php foreach ($messages as $message): ?>
+                            <li><?= $message ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+        <div>
+            <input type="submit" name="submit" id="submit" value="Upload">
+        </div>
+    </form>
+</div>

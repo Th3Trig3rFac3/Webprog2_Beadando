@@ -1,4 +1,8 @@
 <?php
 session_unset();
 session_destroy();
-?> <!-- Üzenet, hogy kijelentkezett -!>
+?>
+
+<div class="alert alert-warning" role="alert">
+    Ön kijelentkezett
+</div>
