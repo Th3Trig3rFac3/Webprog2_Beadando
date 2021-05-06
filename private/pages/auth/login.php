@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
     }
 }
 ?>
-<form method="post">
+<form method="post" class="d-flex justify-content-center">
     <div class="form-group col-auto col-md-2">
         <label for="username">Username</label>
         <input type="text" class="form-control border border-primary" id="username" placeholder="Felhasználónév" name="username" aria-describedby="username" required>

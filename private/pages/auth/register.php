@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
 ?>
 
 <form method="post">
-    <div class="form-group col-auto col-md-2 ">
+    <div class="form-group col-auto col-md-2">
         <label for="username">Felhasználónév</label>
         <input type="text" class="form-control border border-primary" id="username" placeholder="Felhasználónév" name="username" aria-describedby="username" required>
     </div>
@@ -35,7 +35,7 @@ if(isset($_POST['submit'])){
         <label for="password">Jelszó mégegyszer</label>
         <input type="password" class="form-control border border-primary" id="password" placeholder="Jelszó" name="password" required>
     </div>
-    <button type="submit" class="btn btn-primary col-auto">Submit</button>
+    <button type="submit" class="btn btn-primary col-auto col-md-   2">Submit</button>
 </form>
 
 <?php if(!(empty($errors))): ?>
