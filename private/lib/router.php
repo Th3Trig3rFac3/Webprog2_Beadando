@@ -3,5 +3,5 @@
 if(file_exists("private/pages/$PAGE.php")){
     require_once "private/pages/$PAGE.php";
 }else{
-    require_once "private/pages/404.php";
+    require_once "private/pages/errors/404.php";
 }

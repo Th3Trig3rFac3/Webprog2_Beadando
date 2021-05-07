@@ -1,7 +1,6 @@
 <?php
 
-function validate_user_reg(array $request): array
-{
+function validate_user_reg(array $request): array {
     $error = [];
     if(empty($request['username'])){
         $error['username'][] = 'A felhasználónév mezőt kötelező kitölteni';

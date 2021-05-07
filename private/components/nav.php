@@ -17,19 +17,19 @@
             <a class="nav-link" href="?p=auth/register">Regisztrálj</a>
         </li>
         <?php endif; ?>
+        <?php if(!(isset($_SESSION))):?>
+            <li class="nav-item">
+                <a class="nav-link" href="?p=logout">Kijelentkezés</a>
+            </li>
+        <?php endif;?>
         <li class="nav-item">
             <a class="nav-link" href="?p=about">About</a>
         </li>
-        <?php if ($_SESSION['admin'] === 9): ?>
+        <?php if ($_SESSION['role'] === 9): ?>
         <li class="nav-item">
             <a class="nav-link" href="?p=admin">Admin panel</a>
         </li>
         <?php endif; ?>
-        <?php if(isset($_SESSION)):?>
-            <li class="nav-item navbar-brand">
-                <a class="nav-link" href="?p=logout">Kijelentkezés</a>
-            </li>
-        <?php endif;?>
         <!--
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

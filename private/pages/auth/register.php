@@ -13,29 +13,30 @@ if(isset($_POST['submit'])){
         ]);
     } else{
         //hibák kiírása szépen, a form utáni részt meg kéne itt hívni
+        var_dump($errors);
     }
 }
 ?>
 
 <form method="post">
-    <div class="form-group col-auto col-md-2">
+    <div class="form-group col-auto h3 mb-3">
         <label for="username">Felhasználónév</label>
         <input type="text" class="form-control border border-primary" id="username" placeholder="Felhasználónév" name="username" aria-describedby="username" required>
     </div>
-    <div class="form-group col-auto col-md-2">
+    <div class="form-group col-auto h3 mb-3">
         <label for="email">Email-cím</label>
         <input type="email" class="form-control border border-primary" id="email" placeholder="Email cím" name="email" aria-describedby="emailHelp" required>
         <small id="emailHelp" class="form-text text-muted">Senkivel sem osztjuk meg az email címét.</small>
     </div>
-    <div class="form-group .col-auto col-md-2">
+    <div class="form-group col-auto h3 mb-3">
         <label for="password">Jelszó</label>
         <input type="password" class="form-control border border-primary" id="password" placeholder="Jelszó" name="password" required>
     </div>
-    <div class="form-group .col-auto col-md-2">
+    <div class="form-group col-auto h3 mb-3">
         <label for="password">Jelszó mégegyszer</label>
         <input type="password" class="form-control border border-primary" id="password" placeholder="Jelszó" name="password" required>
     </div>
-    <button type="submit" class="btn btn-primary col-auto col-md-   2">Submit</button>
+    <button type="submit" class="btn btn-primary col-auto h3 mb-3">Submit</button>
 </form>
 
 <?php if(!(empty($errors))): ?>
