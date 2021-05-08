@@ -9,7 +9,7 @@
         <li class="nav-item active">
             <a class="nav-link" href="?p=home">Home <span class="sr-only">(current)</span></a>
         </li>
-        <?php if(isset($_SESSION)): ?>
+        <?php if(!(isset($_SESSION))): ?>
         <li class="nav-item">
             <a class="nav-link" href="?p=auth/login">Jelentkezz be</a>
         </li>
@@ -17,9 +17,9 @@
             <a class="nav-link" href="?p=auth/register">Regisztrálj</a>
         </li>
         <?php endif; ?>
-        <?php if(!(isset($_SESSION))):?>
+        <?php if(isset($_SESSION)):?>
             <li class="nav-item">
-                <a class="nav-link" href="?p=logout">Kijelentkezés</a>
+                <a class="nav-link" href="?p=auth/logout">Kijelentkezés</a>
             </li>
         <?php endif;?>
         <li class="nav-item">
