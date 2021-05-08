@@ -1,9 +1,9 @@
 <?php
 session_unset();
 session_destroy();
-$PAGE = $_GET['p'] ?? 'home';
+require_once 'private/pages/home.php'
 ?>
 
-<div class="alert alert-warning" role="alert">
+<div class="alert alert-warning h3 mb-3 col-auto text-center" role="alert">
     Ön kijelentkezett
 </div>
