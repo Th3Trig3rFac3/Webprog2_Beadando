@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
             ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT, ['cost' => 20]),
         ]);
     } else{
-        //hibák kiírása szépen, a form utáni részt meg kéne itt hívni
+        //hibák kiírása szépen
         var_dump($errors);
     }
 }
@@ -22,25 +22,35 @@ if(isset($_POST['submit'])){
     <div class="form-group col-auto h3 mb-3">
         <label for="username">Felhasználónév</label>
         <input type="text" class="form-control border border-primary" id="username" placeholder="Felhasználónév" name="username" aria-describedby="username" required>
+        <?php if(!(empty($errors))): ?>
+            <span class="alert alert-danger"><?= implode(', ', ($errors['username'] ?? [])) ?> </span>
+        <?php endif; ?>
     </div>
     <div class="form-group col-auto h3 mb-3">
         <label for="email">Email-cím</label>
         <input type="email" class="form-control border border-primary" id="email" placeholder="Email cím" name="email" aria-describedby="emailHelp" required>
         <small id="emailHelp" class="form-text text-muted">Senkivel sem osztjuk meg az email címét.</small>
+        <?php if(!(empty($errors))): ?>
+            <span class='alert alert-danger'><?= implode(', ', ($errors['email'] ?? [])) ?> </span>
+        <?php endif; ?>
     </div>
     <div class="form-group col-auto h3 mb-3">
         <label for="password">Jelszó</label>
         <input type="password" class="form-control border border-primary" id="password" placeholder="Jelszó" name="password" required>
+        <?php if(!(empty($errors))): ?>
+            <span class='alert alert-danger'><?= implode(', ', ($errors['password'] ?? [])) ?> </span>
+        <?php endif; ?>
     </div>
     <div class="form-group col-auto h3 mb-3">
-        <label for="password">Jelszó mégegyszer</label>
-        <input type="password" class="form-control border border-primary" id="password" placeholder="Jelszó" name="password" required>
+        <label for="password_confirmation">Jelszó mégegyszer</label>
+        <input type="password" class="form-control border border-primary" id="password_confirmation" placeholder="Jelszó mégegyszer" name="password_confirmation" required>
+        <?php if(!(empty($errors))): ?>
+            <span class='alert alert-danger'><?= implode(', ', ($errors['password_confirmation'] ?? [])) ?> </span>
+        <?php endif; ?>
     </div>
-    <button type="submit" class="btn btn-primary col-auto h3 mb-3">Submit</button>
-</form>
+    <button type="submit" class="btn btn-primary col-auto h3 mb-3" value="register" name="submit">Submit</button>
+    <?php if(!(empty($errors))): ?>
+        <span class='alert alert-danger'><?= implode(', ', ($errors['_'] ?? [])) ?> </span>
+    <?php endif; ?>
 
-<?php if(!(empty($errors))): ?>
-<div class="alert alert-warning" role="alert">
-  <?php echo $errors ?>
-</div>
-<?php endif; ?>
+</form>

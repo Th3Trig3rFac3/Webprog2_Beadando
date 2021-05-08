@@ -25,7 +25,7 @@
         <li class="nav-item">
             <a class="nav-link" href="?p=about">About</a>
         </li>
-        <?php if ($_SESSION['role'] === 9): ?>
+        <?php if($_SESSION['user']['role'] === 9): ?>
         <li class="nav-item">
             <a class="nav-link" href="?p=admin">Admin panel</a>
         </li>
