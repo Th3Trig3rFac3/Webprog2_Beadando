@@ -8,3 +8,4 @@ $images = db_fetchAll('SELECT username, src, files.created_at as "created_at" FR
         Uploaded at: <?= $image['created_at'] ?>
     </div>
 <?php endforeach; ?>
+<!-- postok kiírása bootstrap kártyákkal -->
