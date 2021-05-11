@@ -7,7 +7,7 @@ function validate_user_reg(array $request): array {
     } else if(strlen($request['username']) < 6) {
         $error['username'][] = 'Legalább 6 karakteres felhasználónevet adjon meg';
     } else {
-        $username = db_fetch('user', 'username LIKE :username', [':username' => $request['username']]);
+        $username = db_fetch('users', 'username LIKE :username', [':username' => $request['username']]);
         if($username){
             $error['username'][] = 'A felhasználónév már foglalt';
         }
@@ -28,7 +28,7 @@ function validate_user_reg(array $request): array {
     } else if(strlen($request['email']) < 7){
         $error['email'][] = 'Legalább 7 karakteres e-mail címet adjon meg';
     } else{
-        $email = db_fetch(table: 'user', where: 'email LIKE :email', [':email' => $request['email']]);
+        $email = db_fetch('users', 'email LIKE :email', [':email' => $request['email']]);
         if($email){
             $error['email'][] = 'Ezzel az email címmel már regisztráltak';
         }

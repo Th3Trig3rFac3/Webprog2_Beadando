@@ -11,9 +11,6 @@ if(isset($_POST['submit'])){
             ':email' => $_POST['email'],
             ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT, ['cost' => 20]),
         ]);
-    } else{
-        //hibák kiírása szépen
-        var_dump($errors);
     }
 }
 ?>
@@ -22,6 +19,8 @@ if(isset($_POST['submit'])){
     <div class="form-group col-auto h3 mb-3">
         <label for="username">Felhasználónév</label>
         <input type="text" class="form-control border border-primary" id="username" placeholder="Felhasználónév" name="username" aria-describedby="username" required>
+    </div>
+    <div>
         <?php if(!(empty($errors))): ?>
             <span class="alert alert-danger"><?= implode(', ', ($errors['username'] ?? [])) ?> </span>
         <?php endif; ?>
@@ -30,6 +29,8 @@ if(isset($_POST['submit'])){
         <label for="email">Email-cím</label>
         <input type="email" class="form-control border border-primary" id="email" placeholder="Email cím" name="email" aria-describedby="emailHelp" required>
         <small id="emailHelp" class="form-text text-muted">Senkivel sem osztjuk meg az email címét.</small>
+    </div>
+    <div>
         <?php if(!(empty($errors))): ?>
             <span class='alert alert-danger'><?= implode(', ', ($errors['email'] ?? [])) ?> </span>
         <?php endif; ?>
@@ -37,6 +38,8 @@ if(isset($_POST['submit'])){
     <div class="form-group col-auto h3 mb-3">
         <label for="password">Jelszó</label>
         <input type="password" class="form-control border border-primary" id="password" placeholder="Jelszó" name="password" required>
+    </div>
+    <div>
         <?php if(!(empty($errors))): ?>
             <span class='alert alert-danger'><?= implode(', ', ($errors['password'] ?? [])) ?> </span>
         <?php endif; ?>
@@ -44,6 +47,8 @@ if(isset($_POST['submit'])){
     <div class="form-group col-auto h3 mb-3">
         <label for="password_confirmation">Jelszó mégegyszer</label>
         <input type="password" class="form-control border border-primary" id="password_confirmation" placeholder="Jelszó mégegyszer" name="password_confirmation" required>
+    </div>
+    <div>
         <?php if(!(empty($errors))): ?>
             <span class='alert alert-danger'><?= implode(', ', ($errors['password_confirmation'] ?? [])) ?> </span>
         <?php endif; ?>
