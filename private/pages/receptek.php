@@ -2,7 +2,7 @@
     $receptek = db_fetchAll('SELECT * FROM posts');
 ?>
 <?php foreach ($receptek as $receptek): ?>
-    <div class="card">
+    <div class="card col-auto">
         <div class="row card-header m-1">
             <div class="col-auto">
                 <img class='img-fluid' src="<?= ROOT_URL . $receptek['File_Name'] ?> ">
@@ -16,7 +16,7 @@
         </p>
         <div class="card-footer m-1 row">
             <span class="col">Feltöltés dátuma:<?= $receptek['Post_Time'] ?> </span>
-            <span class="col-auto">Feltöltő:<?= $receptek['owner_Id'] ?> </span>
+            <span class="col">Feltöltő:<?= $receptek['owner_Id'] ?> </span>
         </div>
     </div>
 <?php endforeach; ?>

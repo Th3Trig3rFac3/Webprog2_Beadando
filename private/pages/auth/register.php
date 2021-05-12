@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
 }
 ?>
 
-<form method="post">
+<form method="post" class="col-auto">
     <div class="form-group col-auto h3 mb-3">
         <label for="username">Felhasználónév</label>
         <input type="text" class="form-control border border-primary" id="username" placeholder="Felhasználónév" name="username" aria-describedby="username" required>
