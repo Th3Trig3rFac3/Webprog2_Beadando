@@ -23,10 +23,10 @@
             </li>
         <?php endif;?>
         <li class="nav-item">
-            <a class="nav-link" href="?p=about">About</a>
+            <a class="nav-link" href="?p=about">Receptek</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="?p=about">Receptek</a>
+            <a class="nav-link" href="?p=about">About</a>
         </li>
         <?php if(isset($_SESSION['user']) && $_SESSION['user']['role'] === 9): ?>
         <li class="nav-item">
