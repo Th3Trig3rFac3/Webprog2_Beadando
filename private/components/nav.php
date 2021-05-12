@@ -22,9 +22,16 @@
                 <a class="nav-link" href="?p=auth/logout">Kijelentkezés</a>
             </li>
         <?php endif;?>
+        <?php if($PAGE !== "receptek" || $PAGE !== "file-upload"): ?>
         <li class="nav-item">
-            <a class="nav-link" href="?p=about">Receptek</a>
+            <a class="nav-link" href="?p=receptek">Receptek</a>
         </li>
+        <?php endif; ?>
+        <?php if(isset($_SESSION['user']) && $PAGE === "receptek"): ?>
+        <li class="nav-item">
+            <a class="nav-link" href="?p=file-upload">Recept feltöltése</a>
+        </li>
+        <?php endif; ?>
         <li class="nav-item">
             <a class="nav-link" href="?p=about">About</a>
         </li>

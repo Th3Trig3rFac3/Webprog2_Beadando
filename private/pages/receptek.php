@@ -1,11 +1,11 @@
 <?php
-    $receptek = db_fetchAll('SELECT * FROM posts')
+    $receptek = db_fetchAll('SELECT * FROM posts');
 ?>
 <?php foreach ($receptek as $receptek): ?>
     <div class="card">
         <div class="row card-header m-1">
             <div class="col-auto">
-                <img class='img-fluid' src="<?= ROOT_URL . $receptek['icon'] ?> ">
+                <img class='img-fluid' src="<?= ROOT_URL . $receptek['File_Name'] ?> ">
             </div>
             <div class="col-auto">
                 <h4><a href="?p=subreddit/read&r=<?= $receptek['name'] ?>"><?= $receptek['name'] ?></a> </h4>
