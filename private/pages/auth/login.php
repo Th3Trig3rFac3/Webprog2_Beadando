@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
 ?>
 <form method="post" class="text-center col-auto">
     <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
-    <div class="form-group h3 mb-3 col-auto text-center">
+    <div class="form-group h3 mb-3 text-center">
         <label for="username">Username</label>
         <input type="text" class="form-control border border-primary" id="username" placeholder="Felhasználónév" name="username" aria-describedby="username" required>
         <?php if(!(empty($errors))): ?>
