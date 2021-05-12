@@ -23,7 +23,8 @@ if(isset($_POST['submit'])){
             ':description' => $_POST['description'],
         ]);
     }
-}?>
+}
+?>
 
 <div>
     <form method="post" enctype="multipart/form-data" class="text-lg-center h8 mb-8 col-auto">

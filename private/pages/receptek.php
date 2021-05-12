@@ -1,6 +1,8 @@
 <?php
     $receptek = db_fetchAll('SELECT * FROM posts');
+    $images = db_fetchAll('SELECT owner_Id, File_Name, posts.Post_Time as "Post_Time" FROM users, posts WHERE users.Id = posts.owner_Id'); //lehet szar, ne használd
 ?>
+
 <?php foreach ($receptek as $receptek): ?>
     <div class="card col-auto">
         <div class="row card-header m-1">
@@ -19,4 +21,11 @@
             <span class="col">Feltöltő:<?= $receptek['owner_Id'] ?> </span>
         </div>
     </div>
-<?php endforeach; ?>
+<?php endforeach; ?>    <!--
+<?php foreach ($images as $image): ?>
+    <div>
+        <img src="<?= $image['File_Name'] ?> " alt="">
+        Uploaded by: <?= $image['owner_Id'] ?>
+        Uploaded at: <?= $image['created_at'] ?>
+    </div>
+<?php endforeach; ?>    -->

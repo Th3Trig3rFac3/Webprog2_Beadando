@@ -3,8 +3,8 @@ $images = db_fetchAll('SELECT username, src, files.created_at as "created_at" FR
 ?>
 <?php foreach ($images as $image): ?>
     <div>
-        <img src="<?= $image['src'] ?> " alt="">
-        Uploaded by: <?= $image['username'] ?>
+        <img src="<?= $image['File_Name'] ?> " alt="">
+        Uploaded by: <?= $image['owner_Id'] ?>
         Uploaded at: <?= $image['created_at'] ?>
     </div>
 <?php endforeach; ?>
