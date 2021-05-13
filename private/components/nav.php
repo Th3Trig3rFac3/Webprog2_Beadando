@@ -39,9 +39,9 @@
         <li class="nav-item">
             <a class="nav-link" href="?p=admin">Admin panel</a>
         </li>
-            <li class="nav-item">
-                <a class="nav-link" href="?p=export">Users export</a>
-            </li>
+        <li class="nav-item">
+            <a class="nav-link" href="?p=export">Users export</a>
+        </li>
         <?php endif;?>
         <!--
         <li class="nav-item dropdown">
