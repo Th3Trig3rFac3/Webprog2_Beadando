@@ -19,7 +19,7 @@
         </p>
         <div class="card-footer m-1 row">
             <span class="col">Feltöltés dátuma: <?= $recept['Post_Time'] ?> </span>
-            <span class="col">Feltöltő: <?= $recept['users.username'] ?> </span>
+            <span class="col">Feltöltő: <?= $recept['username'] ?> </span>
         </div>
     </div>
 <?php endforeach; ?>
