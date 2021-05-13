@@ -31,18 +31,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="?p=owned_recepies">Saját receptek</a>
             </li>
-        <?php function kereses(){
-                var_dump($_POST);
-                return $_POST;
-            } ?>
-        <?php if(isset($_POST['submit'])): ?>
+        <?php if(isset($_GET['submit'])): ?>
             <a class="btn btn-warning" href="?p=subreddit/search"></a> ?>
         <?php endif; ?>
-            <form class="form-inline my-2 my-lg-0" method="post">
+            <form class="form-inline my-2 my-lg-0" method="get" action="?p=search">
                 <label for="search">Search</label>
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search" name="search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit" id="submit">Search</button>
-                <?php kereses() ?>
+                <input type="hidden" name="p" value="subreddit/search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">Search</button>
             </form>
         <?php endif; ?>
         <?php if(isset($_SESSION['user']) && $PAGE === "receptek"): ?>

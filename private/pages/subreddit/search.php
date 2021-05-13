@@ -1,8 +1,5 @@
 <?php
-require_once "../components/nav.php";
-$tömb = kereses();
-var_dump($tömb);
-$search = db_fetchAll('select * from posts where name like :name', parameters: [':name' => $_POST['search']]);
+$search = db_fetchAll('select * from posts where name like :name', [':name' => $_GET['search']]);
 ?>
 
 <?php foreach ($search as $recept): ?>
