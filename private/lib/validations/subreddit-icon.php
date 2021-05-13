@@ -27,7 +27,7 @@ function validateSubredditCreation(): array
         $errors['name'][] = 'Subreddit needs a name';
     }elseif (strlen($_POST['name']) < 3){
         $errors['name'][] = 'Subreddit name must be longer than 3 characters';
-    }else{
+    }else{ //ezt nem kell használni, mert lehet több ugyan olyan nevű recept
         $subreddit = db_fetch('subreddits', 'name LIKE :name', [':name' => $_POST['name']]);
         if($subreddit){
             $errors['name'][] = 'Subreddit already exists';

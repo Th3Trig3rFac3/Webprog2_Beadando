@@ -10,7 +10,7 @@
                 <img class='img-fluid' src="<?= ROOT_URL . $receptek['File_Name'] ?> ">
             </div>
             <div class="col-auto">
-                <h4><a href="?p=subreddit/read&r=<?= $receptek['name'] ?>"><?= $receptek['name'] ?></a> </h4>
+                <h4><a><?= $receptek['name'] ?></a> </h4>
             </div>
         </div>
         <p class="card-body">
