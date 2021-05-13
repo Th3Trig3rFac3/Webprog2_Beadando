@@ -1,4 +1,3 @@
-<!-- Ide jön a home menü-->
 <div class="container col-auto">
     <div class="text-center">
         <h1 class="mt-5">Üdvözlöm az Element receptek weboldalán</h1>

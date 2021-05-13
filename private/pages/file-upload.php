@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
             <h1 class="font-weight-normal">Válaszd ki a képet, amit fel szeretnél tölteni a recepthez: </h1>
         </div>
         <div>
-            <label for="fileToUpload">Select your file:</label>
+            <label for="fileToUpload">Adjon hozzá képet:</label>
             <input type="file" name="fileToUpload" id="fileToUpload" required/>
         </div>
         <div>
