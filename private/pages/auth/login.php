@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
     <?php if(!(empty($errors))): ?>
         <span class='alert alert-danger h3 mb-3 text-center'><?= implode(', ', ($errors['_'] ?? [])) ?> </span>
     <?php endif; ?>
-    <?php if(empty($errors) && isset($_SESSION['username'])): ?> <!-- Írja ki -->
+    <?php if(empty($errors) && isset($_SESSION['users']['username'])): ?> <!-- Írja ki, ha bejelentkezett-->
     <div class="alert alert-warning" role="alert">
         Sikeres bejelentkezés
     </div>
