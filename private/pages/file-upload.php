@@ -15,8 +15,7 @@ if(isset($_POST['submit'])){
     if(!$uploadErrors && !move_uploaded_file($tmpPath, $targetPath)){
         $uploadErrors['_'][] = 'Hiba történt feltöltéskor';
     }else{
-        db_execute('INSERT INTO `posts` (id, name, File_Name, owner_Id, description) VALUES (:id, :name, :File_Name, :owner_Id, :description)', [
-            ':id' => uniqid('', true),
+        db_execute('INSERT INTO `posts` (name, File_Name, owner_Id, description) VALUES (:name, :File_Name, :owner_Id, :description)', [
             ':name' => $_POST['name'],
             ':File_Name' => $targetPath,
             ':owner_Id' => $_SESSION['user']['Id'],

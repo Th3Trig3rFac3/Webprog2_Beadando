@@ -8,6 +8,10 @@ if(isset($_POST['submit'])){
     else {
         $errors['_'][] = 'Helytelen felhasználónév vagy jelszó';
     }
+    if(empty($errors)){
+        require_once "private/lib/utils/request.php";
+        redirect("home");
+    }
 }
 ?>
 <form method="post" class="text-center col-auto">

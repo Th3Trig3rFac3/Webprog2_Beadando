@@ -1,9 +1,11 @@
 <?php
-    $receptek = db_fetchAll('SELECT * FROM posts');
-    $images = db_fetchAll('SELECT owner_Id, File_Name, posts.Post_Time as "Post_Time" FROM users, posts WHERE users.Id = posts.owner_Id'); //lehet szar, ne használd
+require_once "../components/nav.php";
+$tömb = kereses();
+var_dump($tömb);
+$search = db_fetchAll('select * from posts where name like :name', parameters: [':name' => $_POST['search']]);
 ?>
 
-<?php foreach ($receptek as $recept): ?>
+<?php foreach ($search as $recept): ?>
     <div class="card col-auto">
         <div class="row card-header m-1">
             <div class="col-auto">

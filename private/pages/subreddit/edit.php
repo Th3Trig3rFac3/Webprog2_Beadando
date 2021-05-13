@@ -6,8 +6,6 @@ if(isset($_POST['submit'])){
     require_once 'private/lib/utils/file.php'; //szar
     require_once 'private/lib/validations/subreddit-icon.php'; //szar
 
-    $icon = $subreddit['icon'];
-
     if(empty($errors)){     //átírni sajátra
         $name = $_POST['name'];
         $description = $_POST['description'];

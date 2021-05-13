@@ -16,5 +16,5 @@ function exportCSV(array $data): void{
         fputcsv($f, $line, ';');
     }
 
-    echo "<script>window.location.replace('" . ROOT_URL . "/public/$fileName.csv');</script>";
+    echo "<script>window.location.replace('./public/$fileName.csv');</script>";
 }

@@ -1,8 +1,7 @@
 <?php
-    $receptek = db_fetchAll('SELECT * FROM posts');
-    $images = db_fetchAll('SELECT owner_Id, File_Name, posts.Post_Time as "Post_Time" FROM users, posts WHERE users.Id = posts.owner_Id'); //lehet szar, ne használd
-?>
+$receptek = db_fetchAll(query: 'Select * From posts where owner_Id = :Id',parameters: [':Id' => $_SESSION['user']['Id']]);
 
+?>
 <?php foreach ($receptek as $recept): ?>
     <div class="card col-auto">
         <div class="row card-header m-1">
@@ -21,4 +20,6 @@
             <span class="col">Feltöltő:<?= $recept['owner_Id'] ?> </span>       <!-- később javítani -->
         </div>
     </div>
+    <a class="btn btn-warning" href="?p=subreddit/edit&r=<?= $recept['Id'] ?>">Edit</a>
+    <a class="btn btn-danger" href="?p=subreddit/delete&r=<?= $recept['Id'] ?>">Delete</a>
 <?php endforeach; ?>

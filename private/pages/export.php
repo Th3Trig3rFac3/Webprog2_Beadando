@@ -1,4 +1,5 @@
 <?php
+require_once ('private/lib/utils/file.php');
 if(isset($_POST['submit'])){
     $users = [];
 

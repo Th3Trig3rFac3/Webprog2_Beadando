@@ -27,6 +27,24 @@
             <a class="nav-link" href="?p=receptek">Receptek</a>
         </li>
         <?php endif; ?>
+        <?php if($PAGE === "receptek"): ?>
+            <li class="nav-item">
+                <a class="nav-link" href="?p=owned_recepies">Saját receptek</a>
+            </li>
+        <?php function kereses(){
+                var_dump($_POST);
+                return $_POST;
+            } ?>
+        <?php if(isset($_POST['submit'])): ?>
+            <a class="btn btn-warning" href="?p=subreddit/search"></a> ?>
+        <?php endif; ?>
+            <form class="form-inline my-2 my-lg-0" method="post">
+                <label for="search">Search</label>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search" name="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="submit" id="submit">Search</button>
+                <?php kereses() ?>
+            </form>
+        <?php endif; ?>
         <?php if(isset($_SESSION['user']) && $PAGE === "receptek"): ?>
         <li class="nav-item">
             <a class="nav-link" href="?p=file-upload">Recept feltöltése</a>

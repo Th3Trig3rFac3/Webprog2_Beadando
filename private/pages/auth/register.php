@@ -1,6 +1,7 @@
 <?php
 if(isset($_POST['submit'])){
     require_once 'private/lib/validations/user_register.php';
+    require_once "private/lib/utils/request.php";
 
     $errors = validate_user_reg($_POST);
 
@@ -11,6 +12,10 @@ if(isset($_POST['submit'])){
             ':email' => $_POST['email'],
             ':password' => password_hash($_POST['password'], PASSWORD_BCRYPT, ['cost' => 20]),
         ]);
+    }
+    if(empty($errors)){
+        require_once "private/lib/utils/request.php";
+        redirect("home");
     }
 }
 ?>
