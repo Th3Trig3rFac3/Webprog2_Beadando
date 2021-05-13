@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
 
     $uploadErrors = validateFileUpload($tmpPath, $targetPath);
 
-    if(!$uploadErrors && !move_uploaded_file($tmpPath, $targetPath)){
+    if(!($uploadErrors && move_uploaded_file($tmpPath, $targetPath))){
         $uploadErrors['_'][] = 'Hiba történt feltöltéskor';
     }else{
         db_execute('INSERT INTO `posts` (name, File_Name, owner_Id, description) VALUES (:name, :File_Name, :owner_Id, :description)', [
