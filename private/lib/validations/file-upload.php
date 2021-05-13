@@ -13,6 +13,10 @@ function validateFileUpload(string $tmpPath, string $targetPath): array {
         $uploadErrors['fileToUpload'][] = 'A fálj amit fel szeretne tölteni meghaladja a limitet: 10MB';
     }
 
+    if(!(str_ends_with(haystack: ($_FILES['fileToUpload']['name']), needle: '.png' || '.jpg' || '.gif'))){
+        $uploadErrors['fileToUpload'][] = "Csak .png, .jpg és .gif kiterjeszésű képeket tölthet fel.";
+    }
+
     if (file_exists($targetPath)) {
         $uploadErrors['fileToUpload'][] = 'Már van ilyen nevű fálj feltöltve';
     }
