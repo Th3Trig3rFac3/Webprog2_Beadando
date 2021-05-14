@@ -3,7 +3,7 @@ $receptek = db_fetch('posts', 'Id = :id', [':id' => $_GET['r']]);
 $errors = [];
 
 if(isset($_POST['submit'])){
-    require_once 'private/lib/utils/file.php'; //szar
+    require_once 'private/lib/utils/file.php'; //szar?
 
     if(empty($errors)){
         $name = $_POST['name'];

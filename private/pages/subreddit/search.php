@@ -17,7 +17,7 @@ $search = db_fetchAll('select * from posts where name like :name', [':name' => $
         </p>
         <div class="card-footer m-1 row">
             <span class="col">Feltöltés dátuma:<?= $recept['Post_Time'] ?> </span>
-            <span class="col">Feltöltő:<?= $recept['owner_Id'] ?> </span>       <!-- később javítani -->
+            <span class="col">Feltöltő:<?= $recept['owner_Id'] ?> </span>       <!-- később javítani, kell ez?-->
         </div>
     </div>
 <?php endforeach; ?>

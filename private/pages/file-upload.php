@@ -14,7 +14,8 @@ if(isset($_POST['submit'])){
 
     if(!($uploadErrors && move_uploaded_file($tmpPath, $targetPath))){
         $uploadErrors['_'][] = 'Hiba történt feltöltéskor';
-    }else{
+    }
+    else{
         db_execute('INSERT INTO `posts` (name, File_Name, owner_Id, description) VALUES (:name, :File_Name, :owner_Id, :description)', [
             ':name' => $_POST['name'],
             ':File_Name' => $targetPath,
