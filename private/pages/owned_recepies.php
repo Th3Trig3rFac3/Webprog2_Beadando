@@ -1,12 +1,11 @@
 <?php
 $receptek = db_fetchAll(query: 'Select * From posts where owner_Id = :Id',parameters: [':Id' => $_SESSION['user']['Id']]);
-
 ?>
 <?php foreach ($receptek as $recept): ?>
     <div class="card col-auto h5 mb-5">
         <div class="row card-header m-1">
             <div class="col-auto">
-                <img class='img-fluid' src="/public/uploads">
+                <img class='img-fluid' src="/public/uploads/<?= $recept['File_Name'] ?>">
             </div>
             <div class="col-auto">
                 <h4><a><?= $recept['name'] ?></a> </h4>
@@ -17,7 +16,7 @@ $receptek = db_fetchAll(query: 'Select * From posts where owner_Id = :Id',parame
         </p>
         <div class="card-footer m-1 row">
             <span class="col">Feltöltés dátuma:<?= $recept['Post_Time'] ?> </span>
-            <span class="col">Feltöltő:<?= $recept['owner_Id'] ?> </span>       <!-- később javítani -->
+            <!--    <span class="col">Feltöltő:<?= $recept['owner_Id'] ?> </span>  van itt erre egyáltalán szükség? -->
         </div>
     </div>
     <a class="btn btn-warning" href="?p=subreddit/edit&r=<?= $recept['Id'] ?>">Edit</a>
