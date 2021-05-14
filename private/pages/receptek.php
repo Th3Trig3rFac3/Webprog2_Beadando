@@ -1,6 +1,5 @@
 <?php
     $posts = db_fetchAll('SELECT * FROM posts, users where users.id = posts.owner_id');
-    //$recipes = db_fetchAll('SELECT posts.id, posts.name, posts.file_name ,posts.description, posts.post_time, users.id, users.username FROM posts, users WHERE users.id = posts.owner_id');
 ?>
 
 <?php foreach ($posts as $recipe): ?>

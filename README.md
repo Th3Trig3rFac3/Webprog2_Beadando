@@ -1,5 +1,2 @@
-webprog beadandó: stílusváltás! főzős oldal (receptek gombal navbar-t bővíteni)
-search bar jobbra, edit.php a receptek szerkesztése, nincsenek képek a receptek.php-n,
-false hiba feltöltéskor (lehet már jó, teszteld)
-
+fix hiba: false hiba feltöltéskor (file upload error, amikor sikerült feltöltenie)
 szorgalmi: adatok törlése gomb register.php-ra és file-upload.phpra, file-uploadban a leírásban ha kitelt a sor akkor "nyíljon le"

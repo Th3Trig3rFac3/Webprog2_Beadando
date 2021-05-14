@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
         $uploadErrors['_'][] = 'Hiba történt feltöltéskor';
     }
     else{
-        db_execute('INSERT INTO `posts` (name, File_Name, owner_id, description) VALUES (:name, :File_Name, :owner_id, :description)', [
+        db_execute('INSERT INTO `posts` (name, file_name, owner_id, description) VALUES (:name, :File_Name, :owner_id, :description)', [
             ':name' => $_POST['name'],
             ':File_Name' => $targetPath,
             ':owner_id' => $_SESSION['user']['id'],

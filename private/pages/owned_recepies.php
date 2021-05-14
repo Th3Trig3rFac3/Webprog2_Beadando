@@ -16,7 +16,6 @@
         </p>
         <div class="card-footer m-1 row">
             <span class="col">Feltöltés dátuma:<?= $recipe['post_time'] ?> </span>
-            <!--    <span class="col">Feltöltő:<?= $recipe['username'] ?> </span>  van itt erre egyáltalán szükség? -->
         </div>
     </div>
     <a class="btn btn-warning" href="?p=subreddit/edit&r=<?= $recipe['id'] ?>">Edit</a>
