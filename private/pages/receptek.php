@@ -8,7 +8,7 @@
     <div class="card col-auto">
         <div class="row card-header m-1">
             <div class="col-auto">
-                <img class='img-fluid' alt="" src="/public/uploads/<?= $receptek["posts.File_Name"] ?>">
+                <img class='img-fluid' alt="" src="">
             </div>
             <div class="col-auto">
                 <h4><a><?= $recept['name'] ?></a> </h4>
