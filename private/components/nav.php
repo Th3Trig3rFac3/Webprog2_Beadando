@@ -48,10 +48,12 @@
         <li class="nav-item">
             <a class="nav-link" href="?p=about">About</a>
         </li>
-        <?php if(isset($_SESSION['user']) && $_SESSION['user']['role'] === 9): ?>
+        <?php if(isset($_SESSION['user']) && $_SESSION['user']['role'] > 0): ?>
         <li class="nav-item">
-            <a class="nav-link" href="?p=admin">Admin panel</a>
+            <a class="nav-link" href="?p=moderation_page">Moderáló panel</a>
         </li>
+        <?php endif; ?>
+        <?php if(isset($_SESSION['user']) && $_SESSION['user']['role'] === 9): ?>
         <li class="nav-item">
             <a class="nav-link" href="?p=export">Users export</a>
         </li>

@@ -1,0 +1,4 @@
+<?php
+
+?>
+moderation panel
