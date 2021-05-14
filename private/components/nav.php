@@ -22,7 +22,7 @@
                 <a class="nav-link" href="?p=auth/logout">Kijelentkezés</a>
             </li>
         <?php endif;?>
-        <?php if($PAGE !== "receptek" || $PAGE !== "file-upload"): ?>
+        <?php if(!($PAGE === "receptek" || $PAGE === "file-upload")): ?>
         <li class="nav-item">
             <a class="nav-link" href="?p=receptek">Receptek</a>
         </li>

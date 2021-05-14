@@ -2,7 +2,7 @@
 function validateFileUpload(string $tmpPath, string $targetPath): array {
     $uploadErrors = [];
 
-    if (!isset($_FILES['fileToUpload'])
+    if (!(isset($_FILES['fileToUpload']))
         || !file_exists($tmpPath)
         || $_FILES['fileToUpload']['size'] !== filesize($tmpPath)
     ) {
