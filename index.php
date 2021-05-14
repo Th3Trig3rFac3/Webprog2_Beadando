@@ -1,19 +1,4 @@
 <?php
-//minden file-ba kell a link sor
-//elképzelés: 9gag clear copy. Ide kell a regisztráció a böngészéshez. Role-ok: owner/admin, moderator, user. Kép feltöltés, hozzá esetleg komment
-//MySQL: regisztráltak adatok tárolására, olvasásra, ki melyik képet posztolta (bónusz az ideje(időzónák?))
-//Be lehet jelentkezni, itt lehet regisztrálni is majd vagy átirányít a regisztráló page-re
-//Role-ok: Mindenki userként kezdi, az owner oszthat ki magasabbat
-//admin felület gomb csak akkor érhető el, ha admin/owner a bejelentkezett (kell a moderator külön?)
-//BREAD: Browse:???
-//A modellhez tartozzanak kapcsolt táblák??
-//file feltöltés (nyílvánvaló), file-ba kiíratás? a letöltés gomb is nyílvávaló
-//Szervezze a programkód különböző részeit külön file-okba: nyílvánvaló...
-//Az alkalmazás file-jait védje megfelelően a .htaccess file segítségével: már kész?
-//Adjon illeszkedő stílust az alkalmazásnak: bootstrap már integrálva?
-//extra?: login history csv-be exportálása,
-//what?:Bevitt adatot nem ellenőrzi megfelelően,A különböző funkciók csak URL-ből elérhetők(nincs minden weboldalra gomb?),Jelszót egyszerű szövegként tárol(encrypt?,hashelés?)
-//problémák: kell a postokhoz time stemp?,
 session_start();
 require_once './private/lib/config.php';
 require_once './private/lib/database.php';

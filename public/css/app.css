@@ -1,8 +1,3 @@
-.subreddit-icon{
-    max-height: 50px;
-    max-width: 50px;
-}
-
 body{
     height: 100vh;
     display: flex;

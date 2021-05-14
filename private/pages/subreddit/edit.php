@@ -1,5 +1,5 @@
 <?php
-$receptek = db_fetch('posts', 'Id = :id', [':id' => $_GET['r']]);
+$receptek = db_fetch('posts', 'id = :id', [':id' => $_GET['r']]);
 $errors = [];
 
 if(isset($_POST['submit'])){
@@ -8,12 +8,12 @@ if(isset($_POST['submit'])){
     if(empty($errors)){
         $name = $_POST['name'];
         $description = $_POST['description'];
-        $id = $receptek['Id'];
+        $id = $receptek['id'];
 
         db_execute('UPDATE posts SET name = :name, description = :description WHERE id = :id', [
             ':name' => $name,
             ':description' => $description,
-            ':id' => $receptek['Id'],
+            ':id' => $receptek['id'],
         ]);
 
         require_once "private/lib/utils/request.php";
@@ -32,7 +32,6 @@ if(isset($_POST['submit'])){
         </div>
         <div class="col-auto h5 mb-5">
             <label for="description">Új leírás</label>
-            <!-- <input type="text" id="description" name="description" required> -->
             <textarea name="description" id="description" required><?= $receptek['description'] ?></textarea>
             <?php if (isset($errors['description'])): ?>
                 <span class="alert alert-danger"><?= implode(', ', ($errors['description'] ?? [])) ?> </span>
