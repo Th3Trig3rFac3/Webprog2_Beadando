@@ -43,9 +43,9 @@ if(isset($_POST['submit'])){
             <label for="username">Adja meg a receptet</label>
             <input type="text" class="form-control border border-primary" id="description" placeholder="Recept " name="description" aria-describedby="description" required>
         </div>
-        <?php if($uploadErrors): ?>
+        <?php if(!(empty($uploadErrors))): ?>
             <div>
-                <h5>Upload failed!</h5>
+                <h5>A feltöltés sikertelen!</h5>
                 <?php foreach ($uploadErrors as $field => $messages): ?>
                     <h6><?= $field ?>: </h6>
                     <ul>

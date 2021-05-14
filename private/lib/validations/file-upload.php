@@ -1,6 +1,9 @@
 <?php
+require_once 'private/lib/utils/file-upload-type.php';
+
 function validateFileUpload(string $tmpPath, string $targetPath): array {
     $uploadErrors = [];
+    $accaptedFileTypes = ['.png','.jpg','.gif'];
 
     if (!(isset($_FILES['fileToUpload']))
         || !file_exists($tmpPath)
@@ -9,7 +12,9 @@ function validateFileUpload(string $tmpPath, string $targetPath): array {
         $uploadErrors['_'][] = 'Hiba történt fáljfeltöltés közben. Próbálja újra';
     }
 
-    if(!str_ends_with(haystack: ($_FILES['fileToUpload']['name']), needle: '.png' || '.jpg' || '.gif')){
+    if(endsWithAny($_FILES['fileToUpload']['name'], $accaptedFileTypes)){
+        $uploadErrors['fileToUpload'][] = null;
+    }else {
         $uploadErrors['fileToUpload'][] = "Csak .png, .jpg és .gif kiterjeszésű képeket tölthet fel.";
     }
 

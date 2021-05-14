@@ -1,8 +1,8 @@
 <?php
-$search = db_fetchAll('select * from posts where name like :name', [':name' => $_GET['search']]);
+$posts = db_fetchAll('select * from posts where name like :name', [':name' => $_GET['search']]);
 ?>
 
-<?php foreach ($search as $recipe): ?>
+<?php foreach ($posts as $recipe): ?>
     <div class="card col-auto">
         <div class="row card-header m-1">
             <div class="col-auto">

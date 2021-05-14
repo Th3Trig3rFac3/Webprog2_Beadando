@@ -5,7 +5,7 @@
     <div class="card col-auto h5 mb-5">
         <div class="row card-header m-1">
             <div class="col-auto">
-                <!-- <img class='img-fluid' src="/public/uploads/<?= $recipe['File_Name'] ?>"> -->
+                <img alt="" src="<?= ROOT_URL . $recipe['file_name'] ?>">
             </div>
             <div class="col-auto">
                 <h4><a><?= $recipe['name'] ?></a> </h4>
@@ -16,7 +16,7 @@
         </p>
         <div class="card-footer m-1 row">
             <span class="col">Feltöltés dátuma:<?= $recipe['post_time'] ?> </span>
-            <!--    <span class="col">Feltöltő:<?= $recipe['owner_id'] ?> </span>  van itt erre egyáltalán szükség? -->
+            <!--    <span class="col">Feltöltő:<?= $recipe['username'] ?> </span>  van itt erre egyáltalán szükség? -->
         </div>
     </div>
     <a class="btn btn-warning" href="?p=subreddit/edit&r=<?= $recipe['id'] ?>">Edit</a>
