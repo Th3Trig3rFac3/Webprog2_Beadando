@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
 </button>
 
-<div class="collapse navbar-collapse col-auto" id="navbarSupportedContent">
+<div class="collapse navbar-collapse col-auto d-flex" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
             <a class="nav-link" href="?p=home">Home <span class="sr-only">(current)</span></a>
@@ -34,7 +34,7 @@
         <?php if(isset($_GET['submit'])): ?>
             <a class="btn btn-warning" href="?p=subreddit/search"></a> ?>
         <?php endif; ?>
-            <form class="form-inline my-2 my-lg-0" method="get" action="?p=search">
+            <form class="form-inline my-2 my-lg-0 justify-content-end" method="get" action="?p=search">
                 <label for="search">Search</label>
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search" name="search">
                 <input type="hidden" name="p" value="subreddit/search">

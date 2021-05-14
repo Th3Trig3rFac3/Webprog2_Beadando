@@ -3,7 +3,7 @@ $receptek = db_fetchAll(query: 'Select * From posts where owner_Id = :Id',parame
 
 ?>
 <?php foreach ($receptek as $recept): ?>
-    <div class="card col-auto">
+    <div class="card col-auto h5 mb-5">
         <div class="row card-header m-1">
             <div class="col-auto">
                 <img class='img-fluid' src="/public/uploads">

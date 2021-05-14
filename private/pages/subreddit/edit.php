@@ -15,6 +15,9 @@ if(isset($_POST['submit'])){
             ':description' => $description,
             ':id' => $receptek['Id'],
         ]);
+
+        require_once "private/lib/utils/request.php";
+        redirect("owned_recepies");
     }
 }?>
 

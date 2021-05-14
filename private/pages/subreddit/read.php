@@ -1,5 +1,5 @@
 <?php
-$subreddit = db_fetch('subreddits', 'name LIKE :name', [':name' => $_GET['r']]);
+$recept = db_fetch('posts', 'name LIKE :name', [':name' => $_GET['r']]);
 $posts = db_fetchAll('SELECT * FROM posts WHERE subreddit_id LIKE :sid', [':sid' => $subreddit['id']])
 ?>
 <div class="row">
@@ -26,13 +26,6 @@ $posts = db_fetchAll('SELECT * FROM posts WHERE subreddit_id LIKE :sid', [':sid'
     <div class="col-12 col-lg-4">
         <div class="card">
             <h4 class="card-header">About the community</h4>
-
-            <div class="card-body">
-                Members: <?=
-                db_fetchAll('SELECT COUNT(*) AS "c" FROM subreddit_users WHERE subreddit_id LIKE :subreddit_id',
-                            [':subreddit_id' => $subreddit['id']])[0]['c'] + 1
-                ?>
-            </div>
 
             <div class="card-body btn-group">
                 <a class="btn btn-success" href='?p=new-post'>New Post</a>
